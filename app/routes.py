@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,request
 from basic_func.func1 import addition
 app = Flask(__name__)
 
@@ -15,8 +15,9 @@ def hello_world():
 
 @app.route('/sum')
 def sumofnumbers():
-    b = "sum of 5 and 7 is:" + str(addition(5, 7))
-    print (b)
+    val1 = request.args.get('a',type = str)
+    val2 = request.args.get('b', type=str)
+    b = "sum of " + val1 + " and " + val2 + " is: " + str(addition(val1, val2))
     return b
 
     
