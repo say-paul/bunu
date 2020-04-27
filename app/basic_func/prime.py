@@ -6,4 +6,3 @@ def prime(n):
             break
     else:
         return("prime")
-print(prime(-23))
