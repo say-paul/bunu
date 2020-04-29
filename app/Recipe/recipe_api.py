@@ -1,12 +1,13 @@
 import requests
-from flask import jsonify
+import json
 def find_recipe(arr):
     urls="http://www.recipepuppy.com/api/"
-    params={'ingredient':arr}
-    r=requests.get(url=urls)
-    data=jsonify(r)
-    return data
+    params={'i':arr}
+    r=requests.get(url=urls,params=params)
+    return r.status_code
+    data=json.loads(r.text)
+    return data["title"]
 
-#arr=['onion','garlic']
+arr='onion,garlic'
 
-#print(find_recipe(arr))
+print(find_recipe(arr))
