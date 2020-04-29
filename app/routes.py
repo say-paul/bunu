@@ -30,7 +30,6 @@ def checkprime():
     b=(prime(num))  
     c=json('prime calculation',b)
     return c
-<<<<<<< HEAD
 @app.routes('/recipe')
 def recipe():
     ingredient[]
@@ -41,8 +40,6 @@ def recipe():
         ingredient.append(ele)
     b=find_recipe(ingredient[n])
     
-=======
->>>>>>> output organized
 
 if __name__ == '__main__':
     app.run()
