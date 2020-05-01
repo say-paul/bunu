@@ -29,17 +29,13 @@ def checkprime():
 #    return b
     b=(prime(num))  
     c=json('prime calculation',b)
-    return c
+    return c,404
 @app.routes('/recipe')
 def recipe():
-    ingredient[]
     # n is no of element i have
-    n=request.args.get('a',type=int)
-    for i in range(n):
-        ele=request.args.get('name',type=str)
-        ingredient.append(ele)
-    b=find_recipe(ingredient[n])
-    
+
+    b,code=find_recipe(ingredient[n])
+    return b,code
 
 if __name__ == '__main__':
     app.run()
