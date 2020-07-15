@@ -16,7 +16,7 @@ def hello_world():
 
 @app.route('/sum')
 def sumofnumbers():
-    val1 = request.args.get('a',type = str)
+    val1 = request.args.get('a',type=str)
     val2 = request.args.get('b', type=str)
     b = (addition(val1, val2))
     d=jsonify({'description':'sum calculate',
@@ -32,4 +32,4 @@ def checkprime():
                'output':b})
     return c
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', debug=True, port=80)
